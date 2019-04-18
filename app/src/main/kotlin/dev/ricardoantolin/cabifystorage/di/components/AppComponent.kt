@@ -6,13 +6,13 @@ import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dev.ricardoantolin.cabifystorage.App
-import dev.ricardoantolin.cabifystorage.data.di.DataModule
+import dev.ricardoantolin.cabifystorage.di.modules.DataModule
 import dev.ricardoantolin.cabifystorage.di.modules.ActivitiesModule
 import dev.ricardoantolin.cabifystorage.di.modules.ApplicationModule
 import dev.ricardoantolin.cabifystorage.di.modules.ViewModelsModule
-import dev.ricardoantolin.cabifystorage.domain.di.DomainModule
-import dev.ricardoantolin.cabifystorage.remote.di.RemoteModule
-import dev.ricardoantolin.cabifystorage.storage.di.StorageModule
+import dev.ricardoantolin.cabifystorage.di.modules.DomainModule
+import dev.ricardoantolin.cabifystorage.di.modules.RemoteModule
+import dev.ricardoantolin.cabifystorage.di.modules.StorageModule
 import javax.inject.Singleton
 
 @Singleton

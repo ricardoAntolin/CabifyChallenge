@@ -24,6 +24,7 @@ android {
 
         testInstrumentationRunner globalConfiguration.testInstrumentationRunner
         testApplicationId globalConfiguration.testApplicationId
+        buildConfigField "String", "BASE_URL", '"https://api.myjson.com"'
     }
 
     compileOptions {
@@ -55,11 +56,13 @@ android {
             signingConfig signingConfigs.debug
             versionNameSuffix '-dev'
             applicationIdSuffix '.dev'
+            buildConfigField "String", "BASE_URL", '"https://api.myjson.com"'
         }
         staging {
             signingConfig signingConfigs.release
             versionNameSuffix '-sta'
             applicationIdSuffix '.sta'
+            buildConfigField "String", "BASE_URL", '"https://api.myjson.com"'
         }
         release {
             minifyEnabled true
@@ -68,6 +71,7 @@ android {
             debuggable false
             signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "BASE_URL", '"https://api.myjson.com"'
         }
     }
     sourceSets {

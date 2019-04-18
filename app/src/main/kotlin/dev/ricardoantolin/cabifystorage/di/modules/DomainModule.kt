@@ -1,11 +1,9 @@
-package dev.ricardoantolin.cabifystorage.storage.di
+package dev.ricardoantolin.cabifystorage.di.modules
 
 import dagger.Module
 
-
 @Module
-abstract class StorageModule {
-
+abstract class DomainModule {
     /**
      * This companion object annotated as a module is necessary in order to provide dependencies
      * statically in case the wrapping module is an abstract class (to use binding)

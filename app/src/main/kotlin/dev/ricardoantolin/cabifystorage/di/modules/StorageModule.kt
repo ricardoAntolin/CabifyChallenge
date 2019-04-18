@@ -1,10 +1,11 @@
-package dev.ricardoantolin.cabifystorage.data.di
+package dev.ricardoantolin.cabifystorage.di.modules
 
-import dagger.Binds
 import dagger.Module
 
+
 @Module
-abstract class DataModule {
+abstract class StorageModule {
+
     /**
      * This companion object annotated as a module is necessary in order to provide dependencies
      * statically in case the wrapping module is an abstract class (to use binding)
