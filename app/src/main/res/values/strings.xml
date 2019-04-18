@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Cabify Storage</string>
+    <string name="app_link">app-link</string>
+
+
+    <!-- ERRORS -->
+    <string name="some_error">Some error occurred</string>
+    <string name="exception_message_generic">There was an error</string>
+</resources>
