@@ -1,4 +1,4 @@
-package dev.ricardoantolin.cabifystorage.remote.models
+package dev.ricardoantolin.cabifystorage.remote.entities
 
 data class RMProductEntity(
     val code: String,

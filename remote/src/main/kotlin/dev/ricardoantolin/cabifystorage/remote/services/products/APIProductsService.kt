@@ -4,7 +4,7 @@ import dev.ricardoantolin.cabifystorage.remote.responses.ProductsResponse
 import io.reactivex.Single
 import retrofit2.http.GET
 
-interface ProductsService {
+interface APIProductsService {
     @GET("bins/4bwec")
     fun fetchProducts(): Single<ProductsResponse>
 }

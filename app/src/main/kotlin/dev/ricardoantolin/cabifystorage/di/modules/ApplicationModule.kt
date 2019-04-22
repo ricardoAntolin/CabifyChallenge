@@ -29,6 +29,4 @@ abstract class ApplicationModule {
 
     @Binds
     abstract fun bindPostExecutionThread(uiThread: UIThread): PostExecutionThread
-
-
 }

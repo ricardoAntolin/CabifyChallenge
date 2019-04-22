@@ -39,6 +39,11 @@ android {
         test.java.srcDirs += 'src/test/kotlin'
     }
 
+    testOptions {
+        unitTests.includeAndroidResources = true
+        unitTests.returnDefaultValues = true
+    }
+
     buildTypes {
         development {
             minifyEnabled false
@@ -75,6 +80,7 @@ dependencies {
     testImplementation deps.junit
     testImplementation deps.mockito.core
     testImplementation deps.mockito.inline
+    testImplementation deps.atsl.test_core
 
     implementation project(":data")
 }

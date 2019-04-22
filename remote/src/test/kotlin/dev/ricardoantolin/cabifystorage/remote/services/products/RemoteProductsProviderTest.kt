@@ -1,19 +1,17 @@
 package dev.ricardoantolin.cabifystorage.remote.services.products
 
-import dev.ricardoantolin.cabifystorage.data.entities.ProductsEntity
+import dev.ricardoantolin.cabifystorage.data.entities.ProductEntity
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
 
-import org.junit.Assert.*
 import retrofit2.HttpException
-import retrofit2.Response
 
 class RemoteProductsProviderTest {
-    lateinit var mockWebServer: MockWebServer
-    lateinit var remoteProductsProvider: RemoteProductsProvider
+    private lateinit var mockWebServer: MockWebServer
+    private lateinit var remoteProductsProvider: RemoteProductsProvider
 
     @Before
     fun setUp() {
@@ -35,9 +33,9 @@ class RemoteProductsProviderTest {
         )
 
         val expectedProductList = listOf(
-            ProductsEntity("VOUCHER", "Cabify Voucher", 5f),
-            ProductsEntity("TSHIRT", "Cabify T-Shirt", 20f),
-            ProductsEntity("MUG", "Cabify Coffee Mug", 7.5f)
+            ProductEntity("VOUCHER", "Cabify Voucher", 5f),
+            ProductEntity("TSHIRT", "Cabify T-Shirt", 20f),
+            ProductEntity("MUG", "Cabify Coffee Mug", 7.5f)
         )
 
         remoteProductsProvider.fetchProducts()

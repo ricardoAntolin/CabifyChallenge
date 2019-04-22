@@ -1,6 +1,6 @@
 package dev.ricardoantolin.cabifystorage.data.entities
 
-data class ProductsEntity(
+data class ProductEntity(
     val code: String,
     val name: String,
     val price: Float
