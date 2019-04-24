@@ -1,6 +1,5 @@
 package dev.ricardoantolin.cabifystorage.storage
 
-import dev.ricardoantolin.cabifystorage.data.entities.ProductEntity
 import dev.ricardoantolin.cabifystorage.storage.extensions.*
 import io.reactivex.Completable
 import io.reactivex.Flowable
