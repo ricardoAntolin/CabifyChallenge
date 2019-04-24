@@ -3,6 +3,7 @@ package dev.ricardoantolin.cabifystorage.storage.extensions
 import android.os.HandlerThread
 import android.os.Looper
 import android.os.Process
+import androidx.annotation.VisibleForTesting
 import io.reactivex.Completable
 import io.reactivex.Flowable
 import io.reactivex.Single
@@ -106,8 +107,8 @@ private fun Realm.transaction(action: (Realm) -> Unit) {
         executeTransaction { action(this) }
     }
 }
-
-private fun Realm.completableTransaction(action: (Realm) -> Unit): Completable =
+@VisibleForTesting
+fun Realm.completableTransaction(action: (Realm) -> Unit): Completable =
     Completable.create { subscriber ->
         try {
             use {

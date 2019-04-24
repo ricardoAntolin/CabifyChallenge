@@ -81,6 +81,11 @@ dependencies {
     testImplementation deps.mockito.core
     testImplementation deps.mockito.inline
     testImplementation deps.atsl.test_core
+    testImplementation deps.robolectric
+    testImplementation deps.power_mock.junit
+    testImplementation deps.power_mock.junit_rule
+    testImplementation deps.power_mock.mockito
+    testImplementation deps.power_mock.xstream
 
     implementation project(":data")
 }

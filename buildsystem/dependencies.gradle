@@ -84,6 +84,7 @@ versions.robolectric = '4.0.2'
 versions.junit = '4.12'
 versions.kluent = '1.44'
 versions.mockito = '2.23.4'
+versions.power_mock = '2.0.2'
 versions.android_test_core = '1.0.0'
 
 //Acceptance Testing
@@ -170,6 +171,13 @@ mockito.core = "org.mockito:mockito-core:$versions.mockito"
 mockito.inline = "org.mockito:mockito-inline:$versions.mockito"
 mockito.android = "org.mockito:mockito-android:$versions.mockito"
 deps.mockito = mockito
+
+def power_mock = [:]
+power_mock.junit = "org.powermock:powermock-module-junit4:$versions.power_mock"
+power_mock.junit_rule = "org.powermock:powermock-module-junit4-rule:$versions.power_mock"
+power_mock.mockito = "org.powermock:powermock-api-mockito2:$versions.power_mock"
+power_mock.xstream = "org.powermock:powermock-classloading-xstream:$versions.power_mock"
+deps.power_mock = power_mock
 
 def google_services = [:]
 google_services.plugin = "com.google.gms:google-services:$versions.google_services_plugin"
