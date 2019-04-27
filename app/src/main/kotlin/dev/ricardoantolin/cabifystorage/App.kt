@@ -11,6 +11,7 @@ import dagger.android.HasServiceInjector
 import dev.ricardoantolin.cabifystorage.di.AppInjector
 import dev.ricardoantolin.cabifystorage.di.components.AppComponent
 import io.realm.Realm
+import io.realm.RealmConfiguration
 import javax.inject.Inject
 
 class App: Application(), HasActivityInjector, HasServiceInjector {
@@ -28,6 +29,15 @@ class App: Application(), HasActivityInjector, HasServiceInjector {
     override fun onCreate() {
         super.onCreate()
         appComponent.inject(this)
+        initRealm()
+    }
+
+    private fun initRealm() {
         Realm.init(this)
+        Realm.setDefaultConfiguration(
+            RealmConfiguration.Builder()
+            .deleteRealmIfMigrationNeeded()
+            .build()
+        )
     }
 }

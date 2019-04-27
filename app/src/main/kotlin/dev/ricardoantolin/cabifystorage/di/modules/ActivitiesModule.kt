@@ -2,11 +2,11 @@ package dev.ricardoantolin.cabifystorage.di.modules
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import dev.ricardoantolin.cabifystorage.MainActivity
 import dev.ricardoantolin.cabifystorage.di.modules.fragments.MainFragmentsBuildersModule
+import dev.ricardoantolin.cabifystorage.escenes.splash.SplashActivity
 
 @Module
 abstract class ActivitiesModule {
-    @ContributesAndroidInjector(modules = [(MainFragmentsBuildersModule::class)])
-    abstract fun contributeMainActivityInjector(): MainActivity
+    @ContributesAndroidInjector
+    abstract fun contributeSplashActivityInjector(): SplashActivity
 }

@@ -1,33 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="dev.ricardoantolin.cabifystorage">
+    package="dev.ricardoantolin.cabifystorage">
 
     <application
-            android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".escenes.cart.CartActivity"></activity>
+        <activity
+            android:name=".escenes.products.list.ProductListActivity"
+            android:label="@string/title_product_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".escenes.products.details.ProductDetailActivity"
+            android:label="@string/title_product_detail"
+            android:parentActivityName=".escenes.products.list.ProductListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="dev.ricardoantolin.cabifystorage.escenes.products.list.ProductListActivity" />
+        </activity>
+        <activity
+            android:name=".escenes.splash.SplashActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
-            android:roundIcon="@mipmap/ic_launcher_round"
-            android:supportsRtl="true"
-            android:theme="@style/AppTheme"
-            android:name=".App">
-        <activity android:name=".MainActivity">
+            android:theme="@style/AppTheme.SplashScreen">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <intent-filter android:label="@string/app_link">
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:scheme="https"
-                      android:host="ricardoantolin.dev"
-                      android:pathPrefix="/"/>
-                <data android:scheme="app"
-                      android:host="ricardoantolin"/>
+                <action android:name="android.intent.action.VIEW" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="ricardoantolin.dev"
+                    android:pathPrefix="/"
+                    android:scheme="https" />
+                <data
+                    android:host="ricardoantolin"
+                    android:scheme="app" />
             </intent-filter>
         </activity>
-        <meta-data android:name="io.fabric.ApiKey" android:value="34e9c4c373f3f6eb27d95ebad538b54626ab51f5" />
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="34e9c4c373f3f6eb27d95ebad538b54626ab51f5" />
     </application>
+
 </manifest>

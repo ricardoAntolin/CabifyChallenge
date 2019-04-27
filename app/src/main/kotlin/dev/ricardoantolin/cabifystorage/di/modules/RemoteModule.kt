@@ -1,9 +1,12 @@
 package dev.ricardoantolin.cabifystorage.di.modules
 
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dev.ricardoantolin.cabifystorage.BuildConfig
+import dev.ricardoantolin.cabifystorage.data.executors.ThreadExecutor
 import dev.ricardoantolin.cabifystorage.data.providers.remote.ProductsRemoteProvider
+import dev.ricardoantolin.cabifystorage.remote.executors.JobExecutor
 import dev.ricardoantolin.cabifystorage.remote.services.products.RemoteProductsProvider
 
 @Module
@@ -21,5 +24,11 @@ abstract class RemoteModule {
             return RemoteProductsProvider(BuildConfig.BASE_URL, BuildConfig.DEBUG)
         }
     }
+
+    @Binds
+    abstract fun bindThreadExecutor(jobExecutor: JobExecutor): ThreadExecutor
+
+    @Binds
+    abstract fun bindProductsRemoteProvider(remoteProductsProvider: RemoteProductsProvider): ProductsRemoteProvider
 
 }

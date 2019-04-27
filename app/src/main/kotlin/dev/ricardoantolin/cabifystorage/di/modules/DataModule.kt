@@ -2,6 +2,8 @@ package dev.ricardoantolin.cabifystorage.di.modules
 
 import dagger.Binds
 import dagger.Module
+import dev.ricardoantolin.cabifystorage.data.repositories.DataProductsRepository
+import dev.ricardoantolin.cabifystorage.domain.repositories.ProductsRepository
 
 @Module
 abstract class DataModule {
@@ -18,5 +20,8 @@ abstract class DataModule {
         return InstanceOfSomething
         }*/
     }
+
+    @Binds
+    abstract fun bindProductsRepository(productsRepository: DataProductsRepository): ProductsRepository
 
 }

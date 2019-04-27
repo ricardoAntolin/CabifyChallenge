@@ -1,6 +1,9 @@
 package dev.ricardoantolin.cabifystorage.di.modules
 
+import dagger.Binds
 import dagger.Module
+import dev.ricardoantolin.cabifystorage.data.providers.storage.ProductsStorageProvider
+import dev.ricardoantolin.cabifystorage.storage.services.products.StorageProductsProvider
 
 
 @Module
@@ -19,5 +22,8 @@ abstract class StorageModule {
         return InstanceOfSomething
         }*/
     }
+
+    @Binds
+    abstract fun bindProductsStorageProvider(storageProductsProvider: StorageProductsProvider): ProductsStorageProvider
 
 }
