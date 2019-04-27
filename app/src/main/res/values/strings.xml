@@ -1,11 +1,22 @@
 <resources>
-    <string name="app_name">Cabify Storage</string>
+    <string name="app_name">Cabify Store</string>
     <string name="app_link">app-link</string>
 
 
     <!-- ERRORS -->
     <string name="some_error">Some error occurred</string>
     <string name="exception_message_generic">There was an error</string>
+
+
+    <!--PRODUCT LIST-->
     <string name="title_product_list">Products</string>
+    <string name="featured_button_text">Featured</string>
+
+
+    <!--PRODUCT DETAIL-->
     <string name="title_product_detail">Product Detail</string>
+
+
+    <!--CART-->
+    <string name="title_cart">Cart</string>
 </resources>

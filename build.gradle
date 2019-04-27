@@ -17,7 +17,7 @@ buildscript {
 allprojects {
     addRepos(repositories)
     ext {
-        androidApplicationId = "dev.ricardoantolin.cabifystorage"
+        androidApplicationId = "dev.ricardoantolin.cabifystore"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         testApplicationId = androidApplicationId + '.test'
