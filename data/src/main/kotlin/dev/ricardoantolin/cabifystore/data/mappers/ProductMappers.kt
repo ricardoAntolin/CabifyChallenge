@@ -8,4 +8,8 @@ fun ProductEntity.asDomain(): Product = Product(code, name, price)
 
 fun List<ProductEntity>.asDomain(): List<Product> = map { it.asDomain() }
 
-fun Flowable<List<ProductEntity>>.asDomain() = this.map { it.asDomain() }
+fun Flowable<List<ProductEntity>>.asDomain(): Flowable<List<Product>> = this.map { it.asDomain() }
+
+fun Product.asDataEntity(): ProductEntity = ProductEntity(code, name, price)
+
+fun List<Product>.asDataEntity(): List<ProductEntity> = map { it.asDataEntity() }

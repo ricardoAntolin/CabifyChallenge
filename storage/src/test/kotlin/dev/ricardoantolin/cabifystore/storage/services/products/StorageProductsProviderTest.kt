@@ -1,55 +1,28 @@
 package dev.ricardoantolin.cabifystore.storage.services.products
 
 import dev.ricardoantolin.cabifystore.data.entities.ProductEntity
+import dev.ricardoantolin.cabifystore.storage.entities.RLCartEntity
 import dev.ricardoantolin.cabifystore.storage.entities.RLProductEntity
 import dev.ricardoantolin.cabifystore.storage.extensions.completableTransaction
+import dev.ricardoantolin.cabifystore.storage.services.RealmTest
 import io.reactivex.Flowable
-import io.realm.Realm
-import io.realm.RealmResults
-import io.realm.log.RealmLog
-import org.junit.After
-import org.junit.Before
-import org.junit.Rule
-import org.junit.Test
-import org.junit.runner.RunWith
-import org.mockito.Mockito.times
-import org.mockito.Mockito.verify
-import org.powermock.api.mockito.PowerMockito
-import org.powermock.core.classloader.annotations.PowerMockIgnore
-import org.powermock.core.classloader.annotations.PrepareForTest
-import org.powermock.core.classloader.annotations.SuppressStaticInitializationFor
-import org.powermock.modules.junit4.rule.PowerMockRule
-import org.robolectric.RobolectricTestRunner
-import org.robolectric.annotation.Config
-import io.realm.RealmObject
+import io.realm.RealmObjectSchema
 import io.realm.RealmQuery
-import org.powermock.api.mockito.PowerMockito.*
+import io.realm.RealmResults
+import org.junit.Before
+import org.junit.Test
+import org.mockito.Mockito.*
+import org.powermock.api.mockito.PowerMockito.`when`
+import org.powermock.api.mockito.PowerMockito.mockStatic
 
 
-@RunWith(RobolectricTestRunner::class)
-@Config(sdk = [28])
-@PowerMockIgnore("org.mockito.*", "org.robolectric.*", "android.*")
-@SuppressStaticInitializationFor("io.realm.internal.Util")
-@PrepareForTest(Realm::class, RealmLog::class, RealmQuery::class, RealmResults::class)
-class StorageProductsProviderTest {
+class StorageProductsProviderTest: RealmTest() {
     private lateinit var storageProductsProvider: StorageProductsProvider
-    @get:Rule
-    val rule = PowerMockRule()
-    private lateinit var mockRealm: Realm
 
     @Before
-    fun setUp() {
-        mockStatic(RealmLog::class.java)
-        mockStatic(Realm::class.java)
-        mockRealm = PowerMockito.mock(Realm::class.java)
-        `when`(Realm.getDefaultInstance()).thenReturn(mockRealm)
-
-        storageProductsProvider = StorageProductsProvider(RealmProductsService())
-    }
-
-    @After
-    fun tearDown() {
-        Realm.getDefaultInstance().close()
+    override fun setUp() {
+        super.setUp()
+        storageProductsProvider = StorageProductsProvider()
     }
 
     @Test
@@ -76,7 +49,6 @@ class StorageProductsProviderTest {
 
     @Test
     fun must_get_all_products_stored_on_realm() {
-
         val products = listOf(
             RLProductEntity("VOUCHER", "Cabify Voucher", 5f),
             RLProductEntity("TSHIRT", "Cabify T-Shirt", 20f),
@@ -108,12 +80,3 @@ class StorageProductsProviderTest {
     }
 }
 
-@Suppress("UNCHECKED_CAST")
-fun <T : RealmObject> mockRealmQuery(): RealmQuery<T> {
-    return mock(RealmQuery::class.java) as RealmQuery<T>
-}
-
-@Suppress("UNCHECKED_CAST")
-fun <T : RealmObject> mockRealmResults(): RealmResults<T> {
-    return mock(RealmResults::class.java) as RealmResults<T>
-}
