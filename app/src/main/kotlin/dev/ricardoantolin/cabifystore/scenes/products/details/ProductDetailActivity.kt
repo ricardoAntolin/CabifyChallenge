@@ -2,10 +2,9 @@ package dev.ricardoantolin.cabifystore.scenes.products.details
 
 import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import android.view.MenuItem
+import com.google.android.material.snackbar.Snackbar
 import dev.ricardoantolin.cabifystore.R
-import dev.ricardoantolin.cabifystore.common.BaseActivity
 import dev.ricardoantolin.cabifystore.common.BaseFragmentActivity
 import dev.ricardoantolin.cabifystore.scenes.products.list.ProductListActivity
 import kotlinx.android.synthetic.main.activity_product_detail.*

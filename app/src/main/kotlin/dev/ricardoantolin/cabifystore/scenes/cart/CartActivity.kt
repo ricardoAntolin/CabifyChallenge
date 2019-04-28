@@ -1,13 +1,8 @@
 package dev.ricardoantolin.cabifystore.scenes.cart
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import dagger.android.DispatchingAndroidInjector
-import dagger.android.support.HasSupportFragmentInjector
 import dev.ricardoantolin.cabifystore.R
-import dev.ricardoantolin.cabifystore.common.BaseActivity
 import dev.ricardoantolin.cabifystore.common.BaseFragmentActivity
-import javax.inject.Inject
 
 class CartActivity : BaseFragmentActivity() {
 

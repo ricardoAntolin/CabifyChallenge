@@ -3,11 +3,16 @@ package dev.ricardoantolin.cabifystore.common
 import android.view.View
 import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import dev.ricardoantolin.cabifystore.di.Injectable
 import java.math.BigInteger
 import java.security.SecureRandom
+import javax.inject.Inject
 
 abstract class BaseFragment: Fragment(), Injectable {
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+
     abstract var progressBar: ProgressBar
 
     var fragmentId: String? = null

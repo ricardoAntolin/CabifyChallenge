@@ -7,8 +7,10 @@ import dev.ricardoantolin.cabifystore.storage.entities.RLProductEntity
 import dev.ricardoantolin.cabifystore.storage.extensions.completableTransaction
 import dev.ricardoantolin.cabifystore.storage.services.RealmTest
 import io.reactivex.Flowable
-import io.realm.*
-import io.realm.internal.RealmObjectProxy
+import io.realm.RealmList
+import io.realm.RealmObjectSchema
+import io.realm.RealmQuery
+import io.realm.RealmSchema
 import org.junit.Before
 import org.junit.Test
 import org.mockito.Mockito

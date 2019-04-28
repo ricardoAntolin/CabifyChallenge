@@ -3,17 +3,17 @@ package dev.ricardoantolin.cabifystore.data.repositories
 import dev.ricardoantolin.cabifystore.data.entities.ProductEntity
 import dev.ricardoantolin.cabifystore.data.providers.remote.ProductsRemoteProvider
 import dev.ricardoantolin.cabifystore.data.providers.storage.ProductsStorageProvider
+import dev.ricardoantolin.cabifystore.data.utils.any
+import dev.ricardoantolin.cabifystore.domain.models.Product
 import io.reactivex.Completable
+import io.reactivex.Flowable
 import io.reactivex.Single
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
-import org.mockito.junit.MockitoJUnitRunner
-import dev.ricardoantolin.cabifystore.data.utils.any
-import dev.ricardoantolin.cabifystore.domain.models.Product
-import io.reactivex.Flowable
 import org.mockito.Mockito.*
+import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
 class DataProductsRepositoryTest {
@@ -39,7 +39,7 @@ class DataProductsRepositoryTest {
         `when`(remoteProvider.fetchProducts()).thenReturn(Single.just(products))
         `when`(storageProvider.saveAll(products)).thenReturn(Completable.complete())
 
-        repositoryTest.updateProducts()
+        repositoryTest.fetchProducts()
             .test()
             .assertNoErrors()
             .assertComplete()
@@ -53,7 +53,7 @@ class DataProductsRepositoryTest {
         val error = Throwable()
         `when`(remoteProvider.fetchProducts()).thenReturn(Single.error(error))
 
-        repositoryTest.updateProducts()
+        repositoryTest.fetchProducts()
             .test()
             .assertError(error)
 

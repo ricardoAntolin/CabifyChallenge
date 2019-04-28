@@ -4,8 +4,8 @@ import android.app.Application
 import android.content.Context
 import dagger.Binds
 import dagger.Module
-import dev.ricardoantolin.cabifystore.domain.executors.PostExecutionThread
 import dev.ricardoantolin.cabifystore.common.UIThread
+import dev.ricardoantolin.cabifystore.domain.executors.PostExecutionThread
 
 @Module
 abstract class ApplicationModule {

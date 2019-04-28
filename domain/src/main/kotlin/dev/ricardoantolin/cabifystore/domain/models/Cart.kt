@@ -33,7 +33,3 @@ data class Cart(
 }
 
 
-data class Discount(
-    val code: String,
-    val quantity: Float
-)

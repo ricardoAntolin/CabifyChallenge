@@ -142,6 +142,8 @@ dependencies {
     implementation deps.rx_android
     implementation deps.rxjava2
     implementation deps.rx_binding
+    implementation deps.rx_material_binding
+    implementation deps.rx_network
 
     // Third party
     implementation deps.gson

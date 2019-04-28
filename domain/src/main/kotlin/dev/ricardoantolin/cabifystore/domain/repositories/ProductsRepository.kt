@@ -5,6 +5,6 @@ import io.reactivex.Completable
 import io.reactivex.Flowable
 
 interface ProductsRepository {
-    fun updateProducts(): Completable
+    fun fetchProducts(): Completable
     fun getProducts(): Flowable<List<Product>>
 }

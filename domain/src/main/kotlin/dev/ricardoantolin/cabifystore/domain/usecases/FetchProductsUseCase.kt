@@ -5,10 +5,10 @@ import dev.ricardoantolin.cabifystore.domain.repositories.ProductsRepository
 import io.reactivex.Completable
 import javax.inject.Inject
 
-class UpdateProductsUseCase @Inject constructor(
+class FetchProductsUseCase @Inject constructor(
     private val productsRepository: ProductsRepository,
     private val postExecutionThread: PostExecutionThread
 ) {
-    fun execute(): Completable = productsRepository.updateProducts()
+    fun execute(): Completable = productsRepository.fetchProducts()
             .observeOn(postExecutionThread.getScheduler())
 }

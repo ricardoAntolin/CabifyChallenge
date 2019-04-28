@@ -13,7 +13,7 @@ class DataProductsRepository @Inject constructor(
     private val storageProvider: ProductsStorageProvider,
     private val remoteProvider: ProductsRemoteProvider
 ): ProductsRepository {
-    override fun updateProducts(): Completable {
+    override fun fetchProducts(): Completable {
         return remoteProvider.fetchProducts()
             .flatMapCompletable { storageProvider.saveAll(it) }
     }

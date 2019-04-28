@@ -13,13 +13,20 @@ import com.google.android.material.snackbar.Snackbar
 import dev.ricardoantolin.cabifystore.common.SingleLiveEvent
 
 
-fun View.showSnackbar(snackbarText: String, timeLength: Int) {
-    Snackbar.make(this, snackbarText, timeLength).show()
+fun View.showSnackbar(snackbarText: String, timeLength: Int, action: View.OnClickListener?) {
+    Snackbar.make(this, snackbarText, timeLength)
+        .apply { action.let { setAction(android.R.string.ok, it) } }
+        .show()
 }
 
-fun View.setupSnackbar(lifecycleOwner: LifecycleOwner, snackbarMessageLiveEvent: SingleLiveEvent<Int>, timeLength: Int) {
+fun View.setupSnackbar(
+    lifecycleOwner: LifecycleOwner,
+    snackbarMessageLiveEvent: SingleLiveEvent<Int>,
+    timeLength: Int,
+    action: View.OnClickListener? = null
+) {
     snackbarMessageLiveEvent.observe(lifecycleOwner, Observer { resource ->
-        resource?.let { showSnackbar(context.getString(it), timeLength) }
+        resource?.let { showSnackbar(context.getString(it), timeLength, action) }
     })
 }
 

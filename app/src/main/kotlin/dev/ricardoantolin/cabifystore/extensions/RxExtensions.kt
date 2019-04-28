@@ -1,12 +1,12 @@
 package dev.ricardoantolin.cabifystore.extensions
 
 import androidx.lifecycle.MutableLiveData
+import dev.ricardoantolin.cabifystore.common.ErrorMessageFactory
+import dev.ricardoantolin.cabifystore.common.SingleLiveEvent
 import io.reactivex.Completable
 import io.reactivex.Flowable
 import io.reactivex.Observable
 import io.reactivex.Single
-import dev.ricardoantolin.cabifystore.common.ErrorMessageFactory
-import dev.ricardoantolin.cabifystore.common.SingleLiveEvent
 
 fun<T: Any> Observable<T>.trackError(errorTracker: SingleLiveEvent<Int>) : Observable<T> {
     return this.doOnError{ errorTracker.postValue(ErrorMessageFactory.create(it)) }

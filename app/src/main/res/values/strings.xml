@@ -6,6 +6,7 @@
     <!-- ERRORS -->
     <string name="some_error">Some error occurred</string>
     <string name="exception_message_generic">There was an error</string>
+    <string name="network_not_reachable">There is a problem with your network some features may not works</string>
 
 
     <!--PRODUCT LIST-->

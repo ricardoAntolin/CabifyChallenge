@@ -9,7 +9,6 @@ import dev.ricardoantolin.cabifystore.models.UIDiscount
 import io.reactivex.Flowable
 
 fun Cart.asUIModel(): UICart = UICart(
-    cartId = cartId,
     products = products.groupBy(Product::code).map { CartItem(it.value.first().asUIModel(), it.value.count() ) },
     discounts = discounts.asUIModel())
 

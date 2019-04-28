@@ -1,17 +1,16 @@
 package dev.ricardoantolin.cabifystore.storage.services.products
 
 import dev.ricardoantolin.cabifystore.data.entities.ProductEntity
-import dev.ricardoantolin.cabifystore.storage.entities.RLCartEntity
 import dev.ricardoantolin.cabifystore.storage.entities.RLProductEntity
 import dev.ricardoantolin.cabifystore.storage.extensions.completableTransaction
 import dev.ricardoantolin.cabifystore.storage.services.RealmTest
 import io.reactivex.Flowable
-import io.realm.RealmObjectSchema
 import io.realm.RealmQuery
 import io.realm.RealmResults
 import org.junit.Before
 import org.junit.Test
-import org.mockito.Mockito.*
+import org.mockito.Mockito.times
+import org.mockito.Mockito.verify
 import org.powermock.api.mockito.PowerMockito.`when`
 import org.powermock.api.mockito.PowerMockito.mockStatic
 

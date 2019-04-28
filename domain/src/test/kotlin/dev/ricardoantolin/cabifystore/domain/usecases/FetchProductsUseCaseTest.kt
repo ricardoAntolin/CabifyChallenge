@@ -13,8 +13,8 @@ import org.mockito.Mockito.`when`
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
-class UpdateProductsUseCaseTest {
-    private lateinit var updateProductsUseCase: UpdateProductsUseCase
+class FetchProductsUseCaseTest {
+    private lateinit var fetchProductsUseCase: FetchProductsUseCase
 
     @Mock
     private lateinit var productsRepository: ProductsRepository
@@ -24,7 +24,7 @@ class UpdateProductsUseCaseTest {
 
     @Before
     fun setUp() {
-        updateProductsUseCase = UpdateProductsUseCase(
+        fetchProductsUseCase = FetchProductsUseCase(
             productsRepository,
             postExecutionThread
         )
@@ -32,13 +32,13 @@ class UpdateProductsUseCaseTest {
 
     @Test
     fun should_call_repository_when_execute() {
-        `when`(productsRepository.updateProducts()).thenReturn(Completable.complete())
+        `when`(productsRepository.fetchProducts()).thenReturn(Completable.complete())
         `when`(postExecutionThread.getScheduler()).thenReturn(Schedulers.io())
 
-        updateProductsUseCase.execute()
+        fetchProductsUseCase.execute()
             .test()
             .assertNoErrors()
 
-        Mockito.verify(productsRepository, Mockito.times(1)).updateProducts()
+        Mockito.verify(productsRepository, Mockito.times(1)).fetchProducts()
     }
 }
