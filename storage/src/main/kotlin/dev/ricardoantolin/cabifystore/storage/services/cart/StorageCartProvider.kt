@@ -15,5 +15,5 @@ class StorageCartProvider @Inject constructor(): CartStorageProvider {
     override fun save(cart: CartEntity): Completable = service.save(cart.asRealmEntity())
 
     override fun findCart(): Flowable<CartEntity> =
-        service.findByPrimaryKey<RLCartEntity>(CART_SINGLE_ID).asDataEntity()
+        service.findAll<RLCartEntity>().map { it.firstOrNull() ?: RLCartEntity() }.asDataEntity()
 }

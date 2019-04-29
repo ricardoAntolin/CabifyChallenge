@@ -2,7 +2,9 @@ package dev.ricardoantolin.cabifystore.di.modules
 
 import dagger.Binds
 import dagger.Module
+import dev.ricardoantolin.cabifystore.data.providers.storage.CartStorageProvider
 import dev.ricardoantolin.cabifystore.data.providers.storage.ProductsStorageProvider
+import dev.ricardoantolin.cabifystore.storage.services.cart.StorageCartProvider
 import dev.ricardoantolin.cabifystore.storage.services.products.StorageProductsProvider
 
 
@@ -25,5 +27,8 @@ abstract class StorageModule {
 
     @Binds
     abstract fun bindProductsStorageProvider(storageProductsProvider: StorageProductsProvider): ProductsStorageProvider
+
+    @Binds
+    abstract fun bindCartStorageProvider(storageCartProvider: StorageCartProvider): CartStorageProvider
 
 }

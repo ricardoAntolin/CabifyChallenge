@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardBackgroundColor="@android:color/transparent"
-    app:cardElevation="0dp"
+    app:cardBackgroundColor="@color/cartItemBackgroudColor"
+    app:cardElevation="4dp"
     app:cardPreventCornerOverlap="true">
 
     <LinearLayout
@@ -22,7 +22,8 @@
                 android:layout_height="wrap_content"
                 android:background="?attr/colorPrimaryDark"
                 android:contentDescription="TODO"
-                android:scaleType="centerCrop" />
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/cabify_voucher"/>
 
             <ImageButton
                 android:id="@+id/btnAddCart"
@@ -47,14 +48,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:textAppearance="?attr/textAppearanceSubtitle2" />
+                android:text="Voucher"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textColor="@color/textColorDark"/>
 
             <TextView
                 android:id="@+id/productPrice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:textAppearance="?attr/textAppearanceBody2" />
+                android:text="25 €"
+                android:textAppearance="?attr/textAppearanceBody1"
+                android:textColor="@color/textColorDark"/>
         </LinearLayout>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

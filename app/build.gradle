@@ -53,12 +53,14 @@ android {
 
     buildTypes {
         development {
+            debuggable true
             signingConfig signingConfigs.debug
             versionNameSuffix '-dev'
             applicationIdSuffix '.dev'
             buildConfigField "String", "BASE_URL", '"https://api.myjson.com"'
         }
         staging {
+            debuggable true
             signingConfig signingConfigs.release
             versionNameSuffix '-sta'
             applicationIdSuffix '.sta'

@@ -14,8 +14,9 @@
     <dimen name="product_list_reveal_height">200dp</dimen>
 
     <!-- Dimens for staggered asymmetric list layout cards-->
-    <dimen name="staggered_product_list_spacing_large">30dp</dimen>
-    <dimen name="staggered_product_list_spacing_small">26dp</dimen>
+    <dimen name="staggered_product_list_spacing_top">40dp</dimen>
+    <dimen name="staggered_product_list_spacing_large">32dp</dimen>
+    <dimen name="staggered_product_list_spacing_small">24dp</dimen>
     <dimen name="staggered_product_list_margin_top_first">72dp</dimen>
     <dimen name="staggered_product_list_margin_top_second">56dp</dimen>
     <dimen name="staggered_product_list_margin_top_third">152dp</dimen>

@@ -6,6 +6,7 @@ import io.reactivex.Flowable
 import io.realm.Realm
 import io.realm.RealmObject
 import io.realm.RealmQuery
+import io.realm.RealmResults
 
 abstract class RealmService<T : RealmObject, ID> {
 
@@ -13,11 +14,13 @@ abstract class RealmService<T : RealmObject, ID> {
         Flowable.defer {
             getPrimaryKeyFieldName(T::class.java)
                 ?.let {
-                    Realm.getDefaultInstance()
-                        .where(T::class.java)
-                        .equalTo(it, "$id")
-                        .findFirstAsync()
-                        .asFlowable<T>()
+                    with(Realm.getDefaultInstance()) {
+                        where(T::class.java)
+                            .equalTo(it, "$id")
+                            .findFirstAsync()
+                            .asFlowable<T>()
+                            .filter { it.isLoaded }
+                    }
                 } ?: throw IllegalArgumentException("object.not.have.primary.key")
         }.addRealmSchedulers()
 

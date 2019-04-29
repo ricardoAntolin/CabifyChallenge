@@ -4,7 +4,7 @@ const val TSHIRT_DISCOUNT_CODE = "tshirt.discount"
 const val VOUCHER_DISCOUNT_CODE = "voucher.discount"
 
 data class Cart(
-    val products: List<Product>
+    val products: List<Product> = listOf()
 ) {
     val discounts: List<Discount> = calculateDiscounts()
 

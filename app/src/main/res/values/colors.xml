@@ -5,6 +5,7 @@
     <color name="colorAccent">@color/lavender_pink</color>
 
     <color name="textColorPrimary">@color/white</color>
+    <color name="textColorDark">@color/purple_brown</color>
     <color name="toolbarIconColor">@color/textColorPrimary</color>
     <color name="productListBackgroundColor">@color/white</color>
     <color name="colorControlActivated">@color/colorPrimary</color>
@@ -16,4 +17,5 @@
     <color name="cornflower">#8a69ff</color>
     <color name="lavender_pink">#e371c8</color>
     <color name="overlay">#2D000000</color>
+    <color name="purple_brown">#442b2d</color>
 </resources>

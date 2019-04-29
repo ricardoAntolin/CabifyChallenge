@@ -2,9 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/content">
+    android:layout_height="match_parent">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -39,7 +39,7 @@
                 android:paddingEnd="12dp"
                 android:paddingRight="12dp"
                 app:contentInsetStart="0dp"
-                app:navigationIcon="@drawable/ic_menu_filled"
+                app:navigationIcon="@drawable/branded_menu"
                 app:title="@string/title_product_list" />
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -60,5 +60,32 @@
         </androidx.core.widget.NestedScrollView>
 
     </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="96dp"
+        android:layout_height="54dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-48dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cornerRadius="27dp"
+            app:icon="@drawable/ic_add_cart"
+            app:iconTint="@color/textColorDark" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/cartBadge"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="12dp"
+            android:elevation="8dp"
+            app:srcCompat="@drawable/badge"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
     <include layout="@layout/progress_overlay" />
 </RelativeLayout>

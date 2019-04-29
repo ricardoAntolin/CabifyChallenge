@@ -1,6 +1,7 @@
 package dev.ricardoantolin.cabifystore.domain.usecases
 
 import dev.ricardoantolin.cabifystore.domain.executors.PostExecutionThread
+import dev.ricardoantolin.cabifystore.domain.models.Cart
 import dev.ricardoantolin.cabifystore.domain.models.Product
 import dev.ricardoantolin.cabifystore.domain.repositories.CartRepository
 import io.reactivex.Completable
@@ -12,7 +13,9 @@ class AddProductToCartUseCase @Inject constructor(
 ){
     fun execute(product: Product): Completable {
         return cartRepository.getCart()
-            .map { it.copy(it.products.toMutableList().apply { add(product) }) }
+            .take(1)
+            .map { Cart(it.products.toMutableList().apply { add(product) }) }
+            .onErrorReturn { Cart() }
             .flatMapCompletable { cartRepository.saveCart(it) }
             .observeOn(postExecutionThread.getScheduler())
     }
