@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.ProgressBar
 import dev.ricardoantolin.cabifystore.R
 import dev.ricardoantolin.cabifystore.common.BaseFragment
@@ -18,7 +19,7 @@ import kotlinx.android.synthetic.main.product_detail.view.*
  * on handsets.
  */
 class ProductDetailFragment : BaseFragment() {
-    override lateinit var progressBar: ProgressBar
+    override lateinit var progressBarOverlay: LinearLayout
     /**
      * The dummy content this fragment is presenting.
      */
@@ -46,7 +47,7 @@ class ProductDetailFragment : BaseFragment() {
 
         // Show the dummy content as text in a TextView.
         item?.let {
-            rootView.product_detail.text = it.code
+            rootView.productDetail.text = it.code
         }
 
         return rootView

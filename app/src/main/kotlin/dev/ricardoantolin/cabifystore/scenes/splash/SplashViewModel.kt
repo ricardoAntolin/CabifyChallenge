@@ -34,7 +34,7 @@ class SplashViewModel @Inject constructor(
                 .flatMap { fetchProductsIfNewrworkIsReachable(it, errorTracker) }
                 .toFlowable(BackpressureStrategy.BUFFER)
                 .trackError(errorTracker)
-                .onErrorReturn { true }
+                .onErrorReturn { false }
         )
 
         return Output(updateObserver, errorTracker)

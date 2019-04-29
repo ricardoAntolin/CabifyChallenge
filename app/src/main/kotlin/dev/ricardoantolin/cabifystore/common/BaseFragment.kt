@@ -1,7 +1,7 @@
 package dev.ricardoantolin.cabifystore.common
 
 import android.view.View
-import android.widget.ProgressBar
+import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import dev.ricardoantolin.cabifystore.di.Injectable
@@ -13,7 +13,7 @@ abstract class BaseFragment: Fragment(), Injectable {
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
-    abstract var progressBar: ProgressBar
+    abstract var progressBarOverlay: LinearLayout
 
     var fragmentId: String? = null
 
@@ -36,11 +36,10 @@ abstract class BaseFragment: Fragment(), Injectable {
     }
 
     open fun showLoading() {
-        progressBar.isIndeterminate = true
-        progressBar.visibility = View.VISIBLE
+        progressBarOverlay.visibility = View.VISIBLE
     }
 
     open fun hideLoading(){
-        progressBar.visibility =  View.GONE
+        progressBarOverlay.visibility =  View.GONE
     }
 }

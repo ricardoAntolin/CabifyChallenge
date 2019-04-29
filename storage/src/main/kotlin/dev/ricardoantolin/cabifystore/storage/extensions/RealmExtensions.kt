@@ -118,7 +118,7 @@ fun Realm.completableTransaction(action: (Realm) -> Unit): Completable =
         } catch (e: Exception) {
             subscriber.onError(e)
         }
-    }.addRealmSchedulers()
+    }
 
 private fun <T : RealmObject> T.hasPrimaryKey(realm: Realm): Boolean {
     if (realm.schema.get(this.javaClass.simpleName) == null) {
@@ -135,7 +135,6 @@ fun <T : RealmModel> RealmResults<T>.toFlowableList(realm: Realm): Flowable<List
     return this.asFlowable()
         .filter(RealmResults<T>::isLoaded)
         .map { realm.copyFromRealm(it) }
-        .addRealmSchedulers()
 }
 
 val looper: Looper = if (Looper.myLooper() != Looper.getMainLooper()) {

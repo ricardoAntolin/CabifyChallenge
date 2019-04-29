@@ -4,13 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.ProgressBar
 import androidx.lifecycle.ViewModelProviders
 import dev.ricardoantolin.cabifystore.R
 import dev.ricardoantolin.cabifystore.common.BaseFragment
 
 class CartFragment : BaseFragment() {
-    override lateinit var progressBar: ProgressBar
+    override lateinit var progressBarOverlay: LinearLayout
 
     companion object {
         fun newInstance() = CartFragment()
