@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:clipChildren="false"
         android:clipToPadding="false"
-        tools:context=".scenes.products.list.ProductListFragment">
+        tools:context=".scenes.products.list.ProductListActivity">
 
         <LinearLayout
             style="@style/Widget.Backdrop"
@@ -63,7 +63,7 @@
 
     <RelativeLayout
         android:layout_width="96dp"
-        android:layout_height="54dp"
+        android:layout_height="64dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="-48dp">
@@ -71,16 +71,18 @@
         <com.google.android.material.button.MaterialButton
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:cornerRadius="27dp"
-            app:icon="@drawable/ic_add_cart"
-            app:iconTint="@color/textColorDark" />
+            android:id="@+id/btnGoToCart"
+            app:cornerRadius="32dp"
+            app:icon="@drawable/ic_cart_empty"
+            android:backgroundTint="@color/colorPrimaryDark"
+            app:iconTint="@color/textColorPrimary" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/cartBadge"
             android:layout_width="8dp"
             android:layout_height="8dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="18dp"
             android:elevation="8dp"
             app:srcCompat="@drawable/badge"
             android:visibility="gone"/>

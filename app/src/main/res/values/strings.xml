@@ -16,8 +16,15 @@
 
     <!--PRODUCT DETAIL-->
     <string name="title_product_detail">Product Detail</string>
-
+    <string name="add_to_cart">Add to cart</string>
 
     <!--CART-->
     <string name="title_cart">Cart</string>
+    <string name="proceed_checkout">Proceed to checkout</string>
+    <string name="total">Total</string>
+    <string name="two_for_one_discount_title">2x1 Discount</string>
+    <string name="two_for_one_discount_description">Offer 2x1 on Voucher</string>
+    <string name="bulk_discount_title">Bulk purchase discount</string>
+    <string name="bulk_discount_description">Offer on bulk purchase of T-shirts</string>
+
 </resources>

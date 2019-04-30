@@ -20,6 +20,7 @@
                 android:id="@+id/productImage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:maxHeight="@dimen/product_card_image_height"
                 android:background="?attr/colorPrimaryDark"
                 android:contentDescription="TODO"
                 android:scaleType="centerCrop"
@@ -48,8 +49,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:text="Voucher"
                 android:textAppearance="?attr/textAppearanceHeadline6"
+                android:text="Voucher"
                 android:textColor="@color/textColorDark"/>
 
             <TextView

@@ -27,7 +27,7 @@ data class Cart(
         val tshirtCode = "TSHIRT"
         val offerDiscount = -1f
         return products.filter { it.code == tshirtCode }
-            .takeIf { it.count() > 3 }
+            .takeIf { it.count() >= 3 }
             ?.let { Discount(TSHIRT_DISCOUNT_CODE, it.count() * offerDiscount) }
     }
 }

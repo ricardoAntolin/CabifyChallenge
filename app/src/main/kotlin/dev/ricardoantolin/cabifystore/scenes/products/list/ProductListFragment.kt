@@ -1,7 +1,6 @@
 package dev.ricardoantolin.cabifystore.scenes.products.list
 
 import android.graphics.Rect
-import android.opengl.Visibility
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,6 +9,7 @@ import android.view.ViewGroup
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.content.res.AppCompatResources.getDrawable
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -19,12 +19,18 @@ import com.google.android.material.snackbar.Snackbar
 import dev.ricardoantolin.cabifystore.R
 import dev.ricardoantolin.cabifystore.common.BaseFragment
 import dev.ricardoantolin.cabifystore.extensions.inflate
+import dev.ricardoantolin.cabifystore.extensions.navigateToActivity
 import dev.ricardoantolin.cabifystore.extensions.setupSnackbar
 import dev.ricardoantolin.cabifystore.models.UIProduct
+import dev.ricardoantolin.cabifystore.scenes.cart.CartActivity
+import dev.ricardoantolin.cabifystore.scenes.products.details.ProductDetailActivity
 import io.reactivex.Observable
 import io.reactivex.subjects.PublishSubject
 import kotlinx.android.synthetic.main.fragment_product_list.*
 import kotlinx.android.synthetic.main.progress_overlay.*
+import org.jetbrains.anko.sdk23.listeners.onClick
+
+const val PRODUCT_INTENT_EXTRA_KEY = "product_intent_extra_key"
 
 class ProductListFragment : BaseFragment() {
     override lateinit var progressBarOverlay: LinearLayout
@@ -45,6 +51,7 @@ class ProductListFragment : BaseFragment() {
         progressBarOverlay = progressbarOverlay
         setUpToolbar()
         setUpRecycler()
+        setListeners()
     }
 
     private fun setUpToolbar() {
@@ -108,8 +115,7 @@ class ProductListFragment : BaseFragment() {
         })
 
         output.cartObserver.observe(this, Observer {
-            if (it.products.count() > 0) cartBadge.visibility = View.VISIBLE
-            else cartBadge.visibility = View.GONE
+            toggleCartIconFullEmpty(it.products.count() > 0)
         })
 
         output.addProductObserver.observe(this, Observer {})
@@ -121,8 +127,29 @@ class ProductListFragment : BaseFragment() {
         content.setupSnackbar(this, output.errorTracker, Snackbar.LENGTH_LONG)
     }
 
+    private fun setListeners() {
+        btnGoToCart.onClick {
+            activity?.navigateToActivity(CartActivity::class.java)
+        }
+    }
+
+
+    private fun toggleCartIconFullEmpty(isFull: Boolean) = if (isFull) {
+        cartBadge.visibility = View.VISIBLE
+        changeGoToCartButtonIcon(R.drawable.ic_cart_full)
+    } else {
+        cartBadge.visibility = View.GONE
+        changeGoToCartButtonIcon(R.drawable.ic_cart_empty)
+    }
+
+    private fun changeGoToCartButtonIcon(resId: Int) = context?.let {
+        btnGoToCart.icon = getDrawable(it, resId)
+    }
+
     private fun onClickItem(product: UIProduct) {
-        //TODO show details of product
+        activity?.navigateToActivity(
+            ProductDetailActivity::class.java,
+            Bundle().apply { putParcelable(PRODUCT_INTENT_EXTRA_KEY, product) })
     }
 }
 

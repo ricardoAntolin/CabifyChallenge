@@ -16,6 +16,6 @@
     <color name="pale_lavender">#ede5ff</color>
     <color name="cornflower">#8a69ff</color>
     <color name="lavender_pink">#e371c8</color>
-    <color name="overlay">#2D000000</color>
+    <color name="overlay">#61000000</color>
     <color name="purple_brown">#442b2d</color>
 </resources>

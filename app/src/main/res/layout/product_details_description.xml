@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/productListBackgroundColor">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/product_details_header_padding"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtProductName"
+            android:textColor="@color/textColorDark"
+            android:gravity="start"
+            android:layout_weight="1"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:text="Cabify T-shirt"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtProductPrice"
+            android:textColor="@color/textColorDark"
+            android:gravity="end"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:layout_marginStart="@dimen/product_details_header_padding"
+            android:text="$54"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtProductDescription"
+        android:padding="@dimen/product_details_header_padding"
+        android:textColor="@color/textColorDark"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias at atque autem consectetur deleniti ex facilis id illum in ipsum iste nemo perspiciatis quos ratione, repellat sit tempora unde?"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/product_details_header_padding"
+        android:layout_marginEnd="@dimen/product_details_header_padding"
+        android:layout_marginBottom="@dimen/product_details_header_padding"
+        android:background="@color/purple_brown"
+        android:orientation="vertical" />
+
+</LinearLayout>

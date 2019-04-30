@@ -14,20 +14,16 @@ class ProductListAdapter(
     private val addToCartAction: PublishSubject<UIProduct>
 ) : RecyclerView.Adapter<ProductListViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductListViewHolder {
-
-        return ProductListViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ProductListViewHolder(
             parent.inflate(R.layout.recycler_item_product),
             clickAction,
             addToCartAction
         )
-    }
 
     override fun getItemCount(): Int = productList.count()
 
-    override fun onBindViewHolder(holder: ProductListViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ProductListViewHolder, position: Int) =
         holder.bind(productList[position])
-    }
 
     fun setItems(productList: List<UIProduct>) {
         this.productList = productList
