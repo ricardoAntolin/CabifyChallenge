@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageButton
+        android:id="@+id/btnRemoveAll"
+        android:layout_width="24dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_vertical"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:src="@drawable/ic_cancel"
+        android:contentDescription="TODO" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="@dimen/cart_item_card_corner_radius_minus"
+        android:layout_marginBottom="@dimen/cart_item_card_corner_radius_minus"
+        app:cardCornerRadius="@dimen/cart_item_card_corner_radius"
+        tools:ignore="RtlSymmetry">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingEnd="@dimen/cart_item_card_corner_radius"
+            android:paddingBottom="@dimen/cart_item_card_corner_radius"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/itemImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/cabify_tshirt"
+                android:scaleType="centerCrop"
+                android:layout_weight="0.9"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="0.5"
+                android:padding="@dimen/text_margin"
+                android:gravity="center"
+                android:background="@color/cartItemBackgroudColor">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtItemName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceHeadline5"
+                    android:textColor="@color/textColorDark"
+                    android:text="Cabify T-Shirt"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtItemUnits"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceListItemSecondary"
+                    android:textColor="@color/textColorDark"
+                    android:text="2 unit x 5.00 €" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtItemPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceListItemSecondary"
+                    android:textColor="@color/textColorDark"
+                    android:text="10.00 €" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="32dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/btnAddOne"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_up_arrow"
+                    android:background="@color/colorPrimaryDark"
+                    android:contentDescription="TODO" />
+
+                <ImageButton
+                    android:id="@+id/btnRemoveOne"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_down_arrow"
+                    android:background="@color/colorPrimary"
+                    android:contentDescription="TODO" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

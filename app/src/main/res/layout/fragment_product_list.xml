@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        tools:context=".scenes.products.list.ProductListActivity">
+
+        <LinearLayout
+            style="@style/Widget.Backdrop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingTop="88dp">
+
+            <include layout="@layout/backdrop" />
+        </LinearLayout>
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:elevation="0dp">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/appBar"
+                style="@style/Widget.Toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:paddingStart="12dp"
+                android:paddingLeft="12dp"
+                android:paddingEnd="12dp"
+                android:paddingRight="12dp"
+                app:contentInsetStart="0dp"
+                app:navigationIcon="@drawable/branded_menu"
+                app:title="@string/title_product_list" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/productGrid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="56dp"
+            android:background="@color/productListBackgroundColor"
+            android:elevation="8dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </androidx.core.widget.NestedScrollView>
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="96dp"
+        android:layout_height="64dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-48dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/btnGoToCart"
+            app:cornerRadius="32dp"
+            app:icon="@drawable/ic_cart_empty"
+            android:backgroundTint="@color/colorPrimaryDark"
+            app:iconTint="@color/textColorPrimary" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/cartBadge"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="18dp"
+            android:elevation="8dp"
+            app:srcCompat="@drawable/badge"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <include layout="@layout/progress_overlay" />
+</RelativeLayout>

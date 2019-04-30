@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/pricesContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_marginStart="@dimen/text_margin"
+    android:layout_marginEnd="@dimen/text_margin"
+    android:background="@color/productListBackgroundColor"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/twoOneDiscountContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/product_details_header_padding"
+        android:paddingBottom="@dimen/product_details_header_padding">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtTwoOneDiscountTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="@string/two_for_one_discount_title"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textColor="@color/textColorDark" />
+
+            <TextView
+                android:id="@+id/txtTwoOneDiscountDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="@string/two_for_one_discount_description"
+                android:textAppearance="?attr/textAppearanceBody1"
+                android:textColor="@color/textColorDark" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtTwoOneDiscountQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/product_details_header_padding"
+            android:gravity="end"
+            android:text="- $54"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textColor="@color/textColorDark" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bulkDiscountContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/product_details_header_padding">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtBulkDiscountTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/bulk_discount_title"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textColor="@color/textColorDark" />
+
+                <TextView
+                    android:id="@+id/txtBulkDiscountDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/bulk_discount_description"
+                    android:textAppearance="?attr/textAppearanceBody1"
+                    android:textColor="@color/textColorDark" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtBulkDiscountQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/product_details_header_padding"
+                android:gravity="end"
+                android:text="- $54"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textColor="@color/textColorDark" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/purple_brown"
+            android:orientation="vertical" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/product_details_header_padding"
+        android:paddingBottom="@dimen/product_details_header_padding">
+
+        <TextView
+            android:id="@+id/txtTotalTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:text="@string/total"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textColor="@color/textColorDark" />
+
+        <TextView
+            android:id="@+id/txtTotalQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/product_details_header_padding"
+            android:gravity="end"
+            android:text="$54"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textColor="@color/textColorDark" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/purple_brown"
+        android:orientation="vertical" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnBuyNow"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginTop="@dimen/product_details_header_padding"
+        android:layout_marginBottom="@dimen/product_details_header_padding"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:text="@string/proceed_checkout"
+        android:textColor="@color/textColorPrimary"
+        app:cornerRadius="8dp" />
+</LinearLayout>
